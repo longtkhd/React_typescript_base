@@ -10,8 +10,8 @@ export function* loginSaga(action: any) {
             url: LOGIN_API,
             method: 'POST',
             data: {
-                email: action.data.account,
-                password: action.data.account,
+                email: action.data.username,
+                password: action.data.password,
             }
         })
 
