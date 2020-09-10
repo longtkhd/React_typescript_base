@@ -1,10 +1,10 @@
 import * as types from './Login.constant'
 
-export function login(email: string, password: string) {
+export function login(account: string, password: string) {
     return {
         type: types.LOGIN,
         data: {
-            email,
+            account,
             password,
         },
     };
