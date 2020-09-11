@@ -45,7 +45,7 @@ const LoginPage = (props: Props) => {
         } else {
             props.history.push('/login')
         }
-    }, []);
+    }, [isAuthenticated]);
 
 
     useEffect(() => {
@@ -53,7 +53,7 @@ const LoginPage = (props: Props) => {
         if (TokenStorage) {
             props.history.push('/');
         }
-    });
+    }, []);
 
 
     return (
