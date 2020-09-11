@@ -20,8 +20,11 @@ export function* loginSaga(action: any) {
             localStorage.setItem('token', data.data.token);
             yield put(loginSucceed(data.data.token));
 
+
         }
-    } catch (error) { }
+    } catch (error) {
+        yield put(loginFaild(error))
+    }
 }
 
 export default function* signInSaga() {

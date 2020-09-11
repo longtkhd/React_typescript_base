@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { connect, useDispatch } from 'react-redux';
 import { compose } from 'redux';
 import { useHistory } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { loginRequest } from './Login.action'
 import { logout } from '../Home/Home.action'
@@ -46,12 +46,26 @@ const LoginPage = (props: Props) => {
         const isAuth = props.LoginPage.token;
         // const isAuth = localStorage.getItem('token');
 
-        if (isAuth || isAuthenticated) {
+        if (isAuth && isAuthenticated) {
             props.history.push('/');
 
 
         }
-    }, [isAuthenticated]);
+
+
+    }, []);
+
+
+    useEffect(() => {
+        const TokenStorage = localStorage.getItem('token');
+
+
+        if (TokenStorage) {
+            props.history.push('/');
+
+
+        }
+    });
 
 
 
@@ -61,8 +75,9 @@ const LoginPage = (props: Props) => {
             <div className="min-vh-100 row">
                 <div className="col-md-6 m-auto">
                     <form className="p-5 rounded-sm shadow text-center" onSubmit={submit}>
-                        Login
-                        <p className="text-muted">Please enter your login and password!</p>
+                        <h1 className="text-info">Login </h1>
+                        {/* <i className="fas fa-camera"></i> */}
+                        <p className="text-muted">Please enter your userName and password!</p>
                         <input
                             type="text"
                             placeholder="Username"
