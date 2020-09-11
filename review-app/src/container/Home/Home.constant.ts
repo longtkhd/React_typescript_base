@@ -1,0 +1,1 @@
+export const LOGOUT = 'Home/LOGOUT'

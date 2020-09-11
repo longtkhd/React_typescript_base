@@ -3,6 +3,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 import Home from './container/Home/Home'
 import LoginPage from './container/Login/Login'
+import PrivateRoute from './components/PrivateRoute/index'
 
 import './App.css';
 
@@ -14,7 +15,7 @@ function App() {
           {/* <Header></Header> */}
           <React.Fragment>
             <Switch>
-              <Route path="/" exact component={Home} />
+              <PrivateRoute exact path="/" component={Home} />
               <Route path="/login" exact component={LoginPage} />
 
 

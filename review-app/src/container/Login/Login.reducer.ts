@@ -4,7 +4,8 @@ import produce from 'immer'
 const initialState = {
     loading: false,
     username: null,
-    password: null
+    password: null,
+    token: '',
 }
 
 export const loginReducer = (state = initialState, action: any) =>
@@ -17,6 +18,8 @@ export const loginReducer = (state = initialState, action: any) =>
                 break
             case types.LOGIN_SUCCESSED:
                 draft.loading = false
+                draft.token = action.data;
+
                 break
             case types.LOGIN_FAILED:
                 draft.loading = false

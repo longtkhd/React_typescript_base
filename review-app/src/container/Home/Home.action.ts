@@ -1,4 +1,4 @@
-import * as types from './Home.constant';
+import * as types from './Home.constant'
 
 
 export const logout = () => ({

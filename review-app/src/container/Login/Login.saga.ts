@@ -16,10 +16,10 @@ export function* loginSaga(action: any) {
         })
 
         if (data) {
-            console.log(data);
+            // console.log(data);
             localStorage.setItem('token', data.data.token);
-            // localStorage.setItem('isAuthenticated', true);
             yield put(loginSucceed(data.data.token));
+
         }
     } catch (error) { }
 }

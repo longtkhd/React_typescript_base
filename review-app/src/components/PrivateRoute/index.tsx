@@ -14,26 +14,25 @@ interface Props extends ReduxProps, RouteProps {
     component: React.ComponentType<RouteComponentProps>
 }
 
-function AuthenticatedGuard(props: Props) {
+function PrivateRoute(props: Props) {
     const { isAuthenticated, component: Component, ...rest } = props
     return (
         <Route
-      { ...rest }
-      render = { props => {
-        if (!isAuthenticated && !localStorage.getItem('token')) {
-            return <Redirect to="/login" />
-        }
-        return <Component { ...props } />
-      }
-}
-/>
-  )
+            {...rest}
+            render={props => {
+                if (!isAuthenticated && !localStorage.getItem('token')) {
+                    return <Redirect to="/login" />
+                }
+                return <Component {...props} />
+            }}
+        />
+    )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: any) => ({
     isAuthenticated: state.home.isAuthenticated
 })
 
 const mapDispatchToProps = {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthenticatedGuard)
+export default connect(mapStateToProps, mapDispatchToProps)(PrivateRoute)
