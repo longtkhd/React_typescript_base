@@ -1,6 +1,6 @@
 import * as types from './Profile.constant'
 import produce from 'immer'
-import { type } from 'os';
+// import { type } from 'os';
 
 const initialState = {
     users: {},
@@ -28,6 +28,7 @@ export const profileReducer = (state = initialState, action: any) =>
                 draft.loading = false;
                 draft.success = false;
                 draft.error = true;
+                break;
 
             default:
                 return state

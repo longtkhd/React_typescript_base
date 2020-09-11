@@ -5,9 +5,9 @@ import { BASE_URL } from '../../urlConfig'
 
 
 
-export const getProfile = (id: string) => (dispatch: any) => {
+export const getProfile = () => (dispatch: any) => {
     dispatch(actions.getUserById)
-    return axios.get(`${BASE_URL}/get/${id}`).then(
+    return axios.get(`${BASE_URL}/user/profile/2018604774`).then(
         user => dispatch(actions.getUserByIdSuccessed(user)),
         err => dispatch(actions.getUserByIdFailed(err))
     );

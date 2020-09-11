@@ -1,9 +1,9 @@
 import * as types from './Profile.constant'
 
 
-export const getUserById = (id: string) => ({
+export const getUserById = () => ({
     type: types.GET_PROFILE,
-    id
+
 })
 
 export const getUserByIdSuccessed = (data: any) => ({

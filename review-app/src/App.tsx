@@ -5,12 +5,14 @@ import Home from './container/Home/Home'
 import LoginPage from './container/Login/Login'
 import PrivateRoute from './components/PrivateRoute/index'
 
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Router history={history}>
+
         <div>
           {/* <Header></Header> */}
           <React.Fragment>
