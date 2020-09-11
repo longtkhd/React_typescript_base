@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux'
 import { getProfile } from './Profile.thunks'
-import { BASE_URL } from '../../urlConfig'
+// import { BASE_URL } from '../../urlConfig'
 import anh from '../../logo.svg'
 import './profile.css';
 // interface Props {
