@@ -1,6 +1,6 @@
 import { takeLatest, call, put, delay } from 'redux-saga/effects';
 import axios from 'axios';
-import { login, loginSucceed, loginFaild } from './Login.action';
+import { loginRequest, loginSucceed, loginFaild } from './Login.action';
 import * as types from './Login.constant';
 import { LOGIN_API } from '../../urlConfig';
 

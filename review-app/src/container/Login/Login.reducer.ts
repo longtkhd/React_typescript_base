@@ -3,7 +3,7 @@ import produce from 'immer'
 
 const initialState = {
     loading: false,
-    account: null,
+    username: null,
     password: null
 }
 
@@ -12,7 +12,7 @@ export const loginReducer = (state = initialState, action: any) =>
         switch (action.type) {
             case types.LOGIN:
                 draft.loading = true;
-                draft.account = action.data.account;
+                draft.username = action.data.username;
                 draft.password = action.data.password;
                 break
             case types.LOGIN_SUCCESSED:

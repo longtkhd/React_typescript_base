@@ -1,15 +1,18 @@
 import * as types from './Login.constant'
 
-export interface LoginData {
-    username: string;
-    password: string;
+// export interface LoginData {
+//     username: string;
+//     password: string;
 
-}
+// }
 
-export const login = (data: LoginData) => {
+export const loginRequest = (username: string, password: string) => {
     return {
         type: types.LOGIN,
-        payload: data
+        data: {
+            username,
+            password,
+        },
     };
 }
 export const loginSucceed = (data: any) => {
