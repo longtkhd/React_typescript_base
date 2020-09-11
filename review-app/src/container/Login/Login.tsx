@@ -42,6 +42,8 @@ const LoginPage = (props: Props) => {
 
         if (isAuth && isAuthenticated) {
             props.history.push('/');
+        } else {
+            props.history.push('/login')
         }
     }, []);
 

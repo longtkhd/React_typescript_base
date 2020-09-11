@@ -10,7 +10,7 @@ const Header = (props: Props) => {
 
 
     const submit = (event: FormEvent) => {
-        event.preventDefault();
+        // event.preventDefault();
         dispatch(logout())
 
 

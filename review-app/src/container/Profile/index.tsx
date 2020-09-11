@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux'
 import { getProfile } from './Profile.thunks'
 import { BASE_URL } from '../../urlConfig'
+import anh from '../../logo.svg'
 import './profile.css';
 // interface Props {
 //     match: any
@@ -33,11 +34,9 @@ const Profile = (props: any) => {
                             <h1 style={{ marginTop: "2%", fontSize: "2rem" }}>{users ? users.position : null}</h1>
                             <div className="content_Infor-img">
 
-                                {/* 
-                                <img
-                                    src={users ? `${BASE_URL}/avatar/${users.avatar}` : null}
 
-                                /> */}
+                                {/* src={`${BASE_URL}/avatar/${users.avatar}`} */}
+                                <img src={anh} alt="" height="140px" style={{ marginTop: "20px" }} />
 
 
                             </div><br />
