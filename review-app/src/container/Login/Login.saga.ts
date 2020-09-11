@@ -1,6 +1,6 @@
-import { takeLatest, call, put, delay } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import axios from 'axios';
-import { loginRequest, loginSucceed, loginFaild } from './Login.action';
+import { loginSucceed, loginFaild } from './Login.action';
 import * as types from './Login.constant';
 import { LOGIN_API } from '../../urlConfig';
 
@@ -16,7 +16,6 @@ export function* loginSaga(action: any) {
         })
 
         if (data) {
-            // console.log(data);
             localStorage.setItem('token', data.data.token);
             yield put(loginSucceed(data.data.token));
 

@@ -1,12 +1,10 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { connect, useDispatch } from 'react-redux';
-import { compose } from 'redux';
-import { useHistory } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 import { loginRequest } from './Login.action'
-import { logout } from '../Home/Home.action'
+
 
 interface Props {
     isAuthenticated: boolean,
@@ -16,16 +14,12 @@ interface Props {
 
 
 const LoginPage = (props: Props) => {
-    console.log(props)
+
     const dispatch = useDispatch();
     const { isAuthenticated } = props;
-
-
-
-
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('')
+    // const [error, setError] = useState('')
 
     const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value)
@@ -48,26 +42,16 @@ const LoginPage = (props: Props) => {
 
         if (isAuth && isAuthenticated) {
             props.history.push('/');
-
-
         }
-
-
     }, []);
 
 
     useEffect(() => {
         const TokenStorage = localStorage.getItem('token');
-
-
         if (TokenStorage) {
             props.history.push('/');
-
-
         }
     });
-
-
 
 
     return (
@@ -91,9 +75,9 @@ const LoginPage = (props: Props) => {
                             onChange={handlePassword}
                             className="form-control form-control-lg mb-4"
                         />
-                        {error && (
+                        {/* {error && (
                             <div className="mb-3 text-danger text-xl-center">{error}</div>
-                        )}
+                        )} */}
                         <button type="submit" className="btn btn-block btn-info btn-lg">
                             Login
             </button>
