@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 interface Props {
-    logout: any
+    logout?: any
 }
 
 const Header = (props: Props) => {

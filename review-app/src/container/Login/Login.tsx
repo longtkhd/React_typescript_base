@@ -59,13 +59,13 @@ const LoginPage = (props: Props) => {
     return (
         <div className="container">
             <div className="min-vh-100 row">
-                <div className="col-md-6 m-auto">
+                <div className="col-md-5 m-auto">
                     <form className="p-5 rounded-sm shadow text-center" onSubmit={submit}>
                         <h1 className="text-info">Login </h1>
                         {/* <i className="fas fa-camera"></i> */}
                         <p className="text-muted">Please enter your userName and password!</p>
                         <input
-                            type="text"
+                            type="email"
                             placeholder="Username"
 
                             onChange={handleUsername}
