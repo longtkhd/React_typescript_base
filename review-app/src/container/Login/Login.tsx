@@ -63,7 +63,7 @@ const LoginPage = (props: Props) => {
                     <form className="p-5 rounded-sm shadow text-center" onSubmit={submit}>
                         <h1 className="text-info">Login </h1>
                         {/* <i className="fas fa-camera"></i> */}
-                        <p className="text-muted">Please enter your userName and password!</p>
+                        <p className="text-muted">Please enter your userName and password!!!</p>
                         <input
                             type="email"
                             placeholder="Username"
