@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { connect, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 import { loginRequest } from './Login.action'
@@ -14,6 +15,7 @@ interface Props {
 
 
 const LoginPage = (props: Props) => {
+    const history = useHistory();
 
     const dispatch = useDispatch();
     const { isAuthenticated } = props;
@@ -41,17 +43,19 @@ const LoginPage = (props: Props) => {
         // const isAuth = localStorage.getItem('token');
 
         if (isAuth && isAuthenticated) {
-            props.history.push('/');
+            history.push('/');
         } else {
-            props.history.push('/login')
+            history.push('/login')
+
         }
     }, [isAuthenticated]);
 
 
     useEffect(() => {
+
         const TokenStorage = localStorage.getItem('token');
         if (TokenStorage) {
-            props.history.push('/');
+            history.push('/');
         }
     }, []);
 
@@ -63,7 +67,7 @@ const LoginPage = (props: Props) => {
                     <form className="p-5 rounded-sm shadow text-center" onSubmit={submit}>
                         <h1 className="text-info">Login </h1>
                         {/* <i className="fas fa-camera"></i> */}
-                        <p className="text-muted">Please enter your userName and password!!!</p>
+                        <p className="text-muted">Please enter your userName and password!</p>
                         <input
                             type="email"
                             placeholder="Username"

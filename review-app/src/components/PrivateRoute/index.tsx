@@ -15,13 +15,16 @@ interface Props extends ReduxProps, RouteProps {
 }
 
 function PrivateRoute(props: Props) {
+    const { location } = props;
     const { isAuthenticated, component: Component, ...rest } = props
     return (
         <Route
             {...rest}
             render={props => {
                 if (!isAuthenticated && !localStorage.getItem('token')) {
-                    return <Redirect to="/login" />
+                    return (
+                        <Redirect to={{ pathname: '/login', state: { from: location } }} />
+                    );
                 }
                 return <Component {...props} />
             }}
