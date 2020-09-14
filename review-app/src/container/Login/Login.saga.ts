@@ -16,7 +16,6 @@ export function* loginSaga(action: any) {
         })
 
         if (data) {
-
             localStorage.setItem('token', data.data.token);
             yield put(loginSucceed(data.data.token));
 
